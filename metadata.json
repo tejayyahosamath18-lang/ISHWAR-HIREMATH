@@ -1,0 +1,6 @@
+{
+  "name": "Educuria by Ishwar Hiremath",
+  "description": "An interactive educational platform featuring modular courses, actual video lessons, comprehension quizzes, and student progress tracking designed by Ishwar Hiremath.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
