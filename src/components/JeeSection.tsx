@@ -560,7 +560,7 @@ export default function JeeSection({ onBackToCatalog }: JeeSectionProps) {
                   JEE Advanced Paper Viewer
                 </h3>
                 <p className="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
-                  Select a year (2015-2025), subject (Mathematics, Physics, Chemistry) and click the yellow <strong className="text-white">CLICK HERE TO DOWNLOAD</strong> button. This opens the professional, watermarked PDF viewer instantly where you can read, zoom, print, or download your file directly in PDF format with the official "Ishwar Hiremath" watermark.
+                  Select a year (2015-2025), subject (Mathematics, Physics, Chemistry) and click the yellow <strong className="text-white">CLICK HERE TO DOWNLOAD</strong> button. This opens the professional, watermarked PDF viewer instantly where you can read, zoom, print, or download your file directly in PDF format with the official "Ishwaryamat" watermark.
                 </p>
                 <div className="pt-2">
                   <button

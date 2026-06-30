@@ -9,6 +9,7 @@ import AdminConsole from './components/AdminConsole';
 import LoginModal from './components/LoginModal';
 import DataAnalystRoadmap from './components/DataAnalystRoadmap';
 import SecondPucSection from './components/SecondPucSection';
+import SecondPucOldSection from './components/SecondPucOldSection';
 import JeeSection from './components/JeeSection';
 import { BookOpen, Award, Users, Search, GraduationCap, CheckCircle, Sparkles, Mail, ShieldCheck, ArrowRight, Palette } from 'lucide-react';
 
@@ -23,7 +24,7 @@ export default function App() {
   const [token, setToken] = useState<string>('');
   
   // Navigation & View state - Defaulting to 'jee-section' so the user lands straight into the brand-new JEE feature!
-  const [activeView, setActiveView] = useState<'catalog' | 'dashboard' | 'admin' | 'course-view' | 'roadmap' | 'puc-section' | 'jee-section'>('jee-section');
+  const [activeView, setActiveView] = useState<'catalog' | 'dashboard' | 'admin' | 'course-view' | 'roadmap' | 'puc-section' | 'puc-old-section' | 'jee-section'>('jee-section');
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
 
   // Data states
@@ -248,7 +249,7 @@ export default function App() {
     }
   };
 
-  const handleNavigate = (view: 'catalog' | 'dashboard' | 'admin' | 'roadmap' | 'puc-section' | 'jee-section') => {
+  const handleNavigate = (view: 'catalog' | 'dashboard' | 'admin' | 'roadmap' | 'puc-section' | 'puc-old-section' | 'jee-section') => {
     if (view === 'dashboard' && !user) {
       setShowLoginModal(true);
       return;
@@ -612,7 +613,12 @@ export default function App() {
           <DataAnalystRoadmap />
         )}
 
-        {/* VIEW 6: SECOND PUC KSEAB SECTION */}
+        {/* VIEW 6: SECOND PUC OLD QUESTION PAPERS SECTION */}
+        {activeView === 'puc-old-section' && (
+          <SecondPucOldSection onBackToCatalog={() => setActiveView('catalog')} />
+        )}
+
+        {/* VIEW 6.5: SECOND PUC KSEAB SECTION */}
         {activeView === 'puc-section' && (
           <SecondPucSection onBackToCatalog={() => setActiveView('catalog')} />
         )}

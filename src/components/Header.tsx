@@ -6,8 +6,8 @@ interface HeaderProps {
   user: User | null;
   onLoginClick: () => void;
   onLogout: () => void;
-  activeView: 'catalog' | 'dashboard' | 'admin' | 'course-view' | 'roadmap' | 'puc-section' | 'jee-section';
-  onNavigate: (view: 'catalog' | 'dashboard' | 'admin' | 'roadmap' | 'puc-section' | 'jee-section') => void;
+  activeView: 'catalog' | 'dashboard' | 'admin' | 'course-view' | 'roadmap' | 'puc-section' | 'puc-old-section' | 'jee-section';
+  onNavigate: (view: 'catalog' | 'dashboard' | 'admin' | 'roadmap' | 'puc-section' | 'puc-old-section' | 'jee-section') => void;
   onSelectCourse?: (courseId: string) => void;
   onSelectRoadmapSection?: (sectionId: string) => void;
   theme: 'light-blue' | 'dark' | 'ocean';
@@ -136,6 +136,22 @@ export default function Header({
             >
               <BookOpen className="h-4 w-4" />
               <span>Courses Catalog</span>
+            </button>
+
+            {/* NEW 2nd PUC OLD QUESTION PAPERS LINK */}
+            <button
+              onClick={() => onNavigate('puc-old-section')}
+              className={navButtonClass(activeView === 'puc-old-section')}
+            >
+              <FileText className={`h-4 w-4 ${theme === 'light-blue' ? 'text-amber-500 animate-pulse' : 'text-amber-400 animate-pulse'}`} />
+              <span className="flex items-center space-x-1">
+                <span>2nd PUC Old Papers</span>
+                <span className={`text-[8px] px-1 py-0.2 rounded font-mono uppercase tracking-wider font-bold ${
+                  theme === 'light-blue' ? 'bg-amber-100 text-amber-700' : 'bg-amber-500/20 text-amber-300'
+                }`}>
+                  PYQ
+                </span>
+              </span>
             </button>
 
             {/* NEW 2nd PUC KSEAB SECTION LINK */}
@@ -487,6 +503,26 @@ export default function Header({
           >
             <BookOpen className="h-5 w-5" />
             <span>Courses Catalog</span>
+          </button>
+
+          {/* NEW 2nd PUC OLD QUESTION PAPERS MOBILE LINK */}
+          <button
+            onClick={() => { onNavigate('puc-old-section'); setMobileMenuOpen(false); }}
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left text-base font-semibold ${
+              activeView === 'puc-old-section'
+                ? theme === 'light-blue' ? 'bg-amber-50 text-amber-600' : 'bg-amber-500/15 text-amber-400'
+                : theme === 'light-blue' ? 'text-slate-600 hover:bg-slate-100' : 'text-slate-300 hover:bg-slate-800'
+            }`}
+          >
+            <FileText className="h-5 w-5 text-amber-500 animate-pulse" />
+            <span className="flex items-center justify-between w-full">
+              <span>2nd PUC Old Papers</span>
+              <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold uppercase ${
+                theme === 'light-blue' ? 'bg-amber-100 text-amber-700' : 'bg-amber-500/20 text-amber-300'
+              }`}>
+                PYQ
+              </span>
+            </span>
           </button>
 
           {/* NEW 2nd PUC MOBILE SECTION LINK */}
